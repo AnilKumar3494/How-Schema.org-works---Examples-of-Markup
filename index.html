@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examples of Markup - How Schema.org works</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 1rem;
+        background: linear-gradient(rgb(238, 151, 119), pink);
+        height: 100%;
+      }
+      div {
+        padding: 1rem;
+        margin: 1rem;
+        border: 1px solid black;
+      }
+      h3 {
+        padding-top: 0.5rem;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 700px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div itemscope>
+      <h1>This is for 'itemscope'</h1>
+      <p>
+        itemscope - It sets a scope for potential properties, but the type of
+        item being described is not defined.
+      </p>
+      <h2>Avatar</h2>
+      <span>Director: James Cameron (born August 16, 1954)</span>
+      <span>Science fiction</span>
+      <a
+        href="https://www.youtube.com/watch?v=5PSNL1qE6VY&pp=ygUOYXZhdGFyIHRyYWlsZXI%3D"
+        >Trailer</a
+      >
+      <h3>Code for the above:</h3>
+      <img src="itemscope - img.jpg" alt="" />
+    </div>
+
+    <div itemscope itemtype="https://schema.org/Movie">
+      <h1>For 'itemscope itemtype'</h1>
+      <p>
+        itemtype - It indicates that the item being described is a movie,
+        providing a context for the subsequent properties.
+      </p>
+      <h2>Avatar</h2>
+      <span>Director: James Cameron (born August 16, 1954)</span>
+      <span>Science fiction</span>
+      <a
+        href="https://www.youtube.com/watch?v=5PSNL1qE6VY&pp=ygUOYXZhdGFyIHRyYWlsZXI%3D"
+        >Trailer</a
+      >
+      <h3>Code for the above:</h3>
+      <img src="itemscope itemtype - img.jpg" alt="" />
+    </div>
+
+    <div itemscope itemtype="https://schema.org/Movie">
+      <h1>For 'itemscope itemtype and itemprop'</h1>
+      <p>
+        itemprop - Defines the properties of a movie item, such as its name
+        (name), director (director), genre (genre), and trailer (trailer). This
+        allows for structured data representation with specific property values
+        associated with the movie item.
+      </p>
+      <h2 itemprop="name">Avatar</h2>
+      <span
+        >Director: <span itemprop="director">James Cameron</span> (born August
+        16, 1954)</span
+      >
+      <span itemprop="genre">Science fiction</span>
+      <a
+        href="https://www.youtube.com/watch?v=5PSNL1qE6VY&pp=ygUOYXZhdGFyIHRyYWlsZXI%3D"
+        itemprop="trailer"
+        >Trailer</a
+      >
+      <h3>Code for the above:</h3>
+      <img src="itemscope itemtype and itemprop - img.jpg" alt="" />
+    </div>
+
+    <div>
+      <h3>Link for Moive.org:</h3>
+
+      <a href="https://schema.org/Movie">Movie.org: https://schema.org/Movie</a>
+    </div>
+  </body>
+</html>
